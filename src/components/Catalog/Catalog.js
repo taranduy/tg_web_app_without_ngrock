@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import s from './Catalog.module.scss'
 import { ProductItemm } from './ProductItem/ProductItem'
 import { useStore } from '../../hooks/useStore'
-import { useTelegram } from '../../hooks/useTelegram'
+// import { useTelegram } from '../../hooks/useTelegram'
 
 const products = [
     {
@@ -79,7 +79,7 @@ const categories = [
 
 export const Catalog = () => {
     const [showCategories, setShowCategories] = useState(false)
-    const { tg, queryId } = useTelegram();
+    // const { tg, queryId } = useTelegram();
     const { store, storeSize, sumPrice } = useStore((state) => state)
     const search = (val) => {
         console.log(val)
@@ -90,18 +90,18 @@ export const Catalog = () => {
     // useEffect(() => {
     //     console.log(store)
     // }, [store])
-    if (storeSize > 0) {
-        // console.log('Open')
-        tg.MainButton.hide();
-    } else {
-        // console.log('HIDE')
-        tg.MainButton.show();
-        tg.MainButton.setParams({
-            text: `Купить ${sumPrice} р.`
-            //Возможность менять валюту через админку
-        })
+    // if (storeSize > 0) {
+    //     // console.log('Open')
+    //     tg.MainButton.hide();
+    // } else {
+    //     // console.log('HIDE')
+    //     tg.MainButton.show();
+    //     tg.MainButton.setParams({
+    //         text: `Купить ${sumPrice} р.`
+    //         //Возможность менять валюту через админку
+    //     })
 
-    }
+    // }
     return (
         <section className={s.container}>
             <header className={s.header_categories}>
