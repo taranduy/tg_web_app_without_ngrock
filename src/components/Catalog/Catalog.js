@@ -92,14 +92,16 @@ export const Catalog = () => {
     }, [store])
     if (storeSize > 0) {
         // console.log('Open')
-        tg.MainButton.hide();
-    } else {
-        // console.log('HIDE')
         tg.MainButton.show();
         tg.MainButton.setParams({
-            text: `Купить ${sumPrice} р.`
+        text: `Купить ${sumPrice} р.`
+    })
+
+    } else {
+        // console.log('HIDE')
+        tg.MainButton.hide();
+        
             //Возможность менять валюту через админку
-        })
 
     }
     return (
