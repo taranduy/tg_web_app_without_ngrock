@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Catalog } from './components/Catalog/Catalog';
+import { useTelegram } from './hooks/useTelegram'
+import { useEffect } from 'react'
+
 
 
 const router = createBrowserRouter([
@@ -23,7 +26,11 @@ const router = createBrowserRouter([
   }
 ])
 function App() {
+  const {onToggleButton, tg} = useTelegram();
 
+  useEffect(() => {
+      tg.ready();
+  }, [])
   return (
     <div>
       <RouterProvider router={router} />
