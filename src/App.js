@@ -1,23 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Catalog } from './components/Catalog/Catalog';
 
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: 
+      <div>
+        <h1>
+          header
+        </h1>
+        <Outlet />
+      </div>,
+      children: [
+        {
+          path: '/catalog',
+          element: <Catalog />
+        }
+      ]
+  }
+])
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <RouterProvider router={router} />
     </div>
   );
 }

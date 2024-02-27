@@ -1,0 +1,53 @@
+.container {
+    &_product {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    &_img {
+        width: 30%;
+        padding: 10px;
+        height: 300px;
+        // display: inline-block;
+        overflow: hidden;
+    }
+
+    &_text {
+        width: 70%;
+        padding: 10px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        overflow: hidden;
+
+        &_header {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            vertical-align: middle;
+            // justify-content: center;
+            line-height: 2rem;
+        }
+
+        // height: 100%;
+    }
+    &_price{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        &__value{
+            white-space: nowrap;
+        }
+    }
+}
+
+.amount {
+    font-size: 1rem;
+    color: grey;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
