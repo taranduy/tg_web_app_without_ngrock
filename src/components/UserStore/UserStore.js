@@ -24,7 +24,7 @@ export const UserStore =async () => {
                     Ничего нет <br />
                     Добавьте что-то в карзину
                     <br />
-                    {JSON.stringify(fromCloud)}
+                    {fromCloud}
                 </h1>
                 :
                 <section>
