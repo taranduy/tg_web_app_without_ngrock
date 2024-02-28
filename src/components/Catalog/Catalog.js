@@ -134,6 +134,9 @@ export const Catalog = () => {
                     }>
                     категории
                 </button>
+                {
+                    JSON.stringify(tg.setItem('key12', 'value[, callback]12'))
+                }
             </header>
 
             {
