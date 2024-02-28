@@ -13,7 +13,7 @@ export const UserStore = () => {
     const { tg, queryId } = useTelegram();
     const storeArr = mapToArray(store)
     console.log(storeArr)
-    const fromCloud = tg.CloudStorage.getItemm('')
+    const fromCloud = tg.CloudStorage.getItem('key12')
     return(
         <section>
             <h1>Корзина</h1>
