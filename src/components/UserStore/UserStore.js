@@ -24,7 +24,7 @@ export const UserStore = () => {
                     Ничего нет <br />
                     Добавьте что-то в карзину
                     <br />
-                    {fromCloud}
+                    {JSON.stringify(fromCloud)}
                 </h1>
                 :
                 <section>
