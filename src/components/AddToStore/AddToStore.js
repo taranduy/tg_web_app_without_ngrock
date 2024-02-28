@@ -3,11 +3,11 @@ import s from './AddToStore.module.scss'
 
 
 
-export const AddToStore = ({onChangeAmount, maxAmount}) =>{
+export const AddToStore = ({onChangeAmount, maxAmount, initAmount = 0}) =>{
 
     // const maxAmount = maxAmount
     // let amountVal = 0
-    const [amount, setAmount] = useState(0)
+    const [amount, setAmount] = useState(initAmount)
     // const handlerChange = () =>{
     //     onChangeAmount(amount)
     // }

@@ -31,7 +31,7 @@ export const UserStore = () => {
                         title={item.title}
                         description={item.description}
                         photo={item.photo}
-                        amount={item.amount}
+                        initAmount={item.amount}
                         price={item.price}
                     />
                     )}

@@ -3,7 +3,7 @@ import { AddToStore } from '../../AddToStore/AddToStore'
 import s from './ProductItem.module.scss'
 
 
-export function ProductItemm({id, title, description, photo,  amount, price}) {
+export function ProductItemm({id, title, description, photo,  amount, price, initAmount}) {
     const addToStore = useStore((state) => state.addToStore)
     const handlerChange = (amount) =>{
         addToStore({title, amount, id, price, photo})
@@ -40,7 +40,7 @@ export function ProductItemm({id, title, description, photo,  amount, price}) {
                 <h3 className={s.container_price__value}>
                     {price} р.
                 </h3>
-                <AddToStore maxAmount={amount} onChangeAmount={handlerChange}/>
+                <AddToStore maxAmount={amount} onChangeAmount={handlerChange} initAmount={initAmount}/>
             </div>
 
 
