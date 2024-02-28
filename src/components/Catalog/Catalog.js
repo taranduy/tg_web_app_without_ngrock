@@ -93,17 +93,22 @@ export const Catalog = () => {
     if (storeSize > 0) {
         // console.log('Open')
         tg.MainButton.show();
+        
         tg.MainButton.setParams({
-        text: `Купить ${sumPrice} р.`
-    })
+            text: `Купить ${sumPrice} р.`
+        })
+        tg.BackButton.show()
+        tg.SettingsButton.show()
 
     } else {
         // console.log('HIDE')
         tg.MainButton.hide();
-        
-            //Возможность менять валюту через админку
+
+        //Возможность менять валюту через админку
 
     }
+
+    
     return (
         <section className={s.container}>
             <header className={s.header_categories}>
