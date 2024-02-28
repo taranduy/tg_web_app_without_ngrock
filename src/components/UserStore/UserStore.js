@@ -8,12 +8,12 @@ import { useTelegram } from '../../hooks/useTelegram'
 
 
 
-export const UserStore = async () => {
+export const UserStore = () => {
     const {store, addToStore} = useStore((state) => state)
     const { tg, queryId } = useTelegram();
     const storeArr = mapToArray(store)
     console.log(storeArr)
-    const fromCloud = await tg.CloudStorage.getItem('key12')
+    const fromCloud = tg.CloudStorage.getItem('key12')
     return(
         <section>
             <h1>Корзина</h1>
