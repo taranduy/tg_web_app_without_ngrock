@@ -1,6 +1,7 @@
 import { useStore } from "../../hooks/useStore"
 import { ProductItemm } from "../Catalog/ProductItem/ProductItem"
 
+import { useTelegram } from '../../hooks/useTelegram'
 
 
 
@@ -9,10 +10,10 @@ import { ProductItemm } from "../Catalog/ProductItem/ProductItem"
 
 export const UserStore = () => {
     const {store, addToStore} = useStore((state) => state)
-
+    const { tg, queryId } = useTelegram();
     const storeArr = mapToArray(store)
     console.log(storeArr)
-
+    const fromCloud = tg.CloudStorage.getItemm('')
     return(
         <section>
             <h1>Корзина</h1>
@@ -22,6 +23,8 @@ export const UserStore = () => {
                 <h1>
                     Ничего нет <br />
                     Добавьте что-то в карзину
+                    <br />
+                    {fromCloud}
                 </h1>
                 :
                 <section>

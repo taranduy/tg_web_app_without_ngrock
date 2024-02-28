@@ -130,7 +130,7 @@ export const Catalog = () => {
                 <button
                     onClick={() =>
                     // setShowCategories(!showCategories)
-                    { console.dir(store) }
+                    { tg.setItem('key12', 'value[, callback]12') }
                     }>
                     категории
                 </button>
