@@ -93,7 +93,7 @@ export const Catalog = () => {
     if (storeSize > 0) {
         // console.log('Open')
         tg.MainButton.show();
-        
+
         tg.MainButton.setParams({
             text: `Купить ${sumPrice} р.`
         })
@@ -108,9 +108,15 @@ export const Catalog = () => {
         //Возможность менять валюту через админку
 
     }
-    tg.onEvent('mainButtonClicked', tgDataBuy(store, queryId))
+    useEffect(() => {
+        tg.onEvent('mainButtonClicked', tgDataBuy(store, queryId))
+        return () => {
+            tg.offEvent('mainButtonClicked', tgDataBuy(store, queryId))
 
-    
+        }
+    }, [])
+
+
     return (
         <section className={s.container}>
             <header className={s.header_categories}>
@@ -131,12 +137,13 @@ export const Catalog = () => {
 
                 <button
                     onClick={() =>
-                    // setShowCategories(!showCategories)
-                    { tg.setItem('key12', JSON.stringify('value[, callback]12')) }
+                        // setShowCategories(!showCategories)
+                        tgDataBuy(store, queryId)
+                        // console.log('sds')
                     }>
                     категории
                 </button>
-                
+
             </header>
 
             {
