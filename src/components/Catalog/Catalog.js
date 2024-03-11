@@ -99,11 +99,12 @@ export const Catalog = () => {
         } catch (e) {
             console.log(e)
         }
-    }, [store])
+    }, [store, storeSize, sumPrice])
     // useEffect(() => {
     //     console.log(showCategories)
     // }, [showCategories])
     useEffect(() => {
+        console.log('huihui')
         console.log(store)
     }, [store])
     if (storeSize > 0) {
@@ -154,8 +155,8 @@ export const Catalog = () => {
                 <button
                     onClick={() =>
                         // setShowCategories(!showCategories)
-                        tgDataBuy(store, queryId)
-                        // console.log('sds')
+                        // tgDataBuy(store, queryId)
+                        console.log(store)
                     }>
                     категории
                 </button>
