@@ -94,7 +94,7 @@ export const Catalog = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({store, queryId})
+                body: JSON.stringify({store: new Array(store), queryId})
             })
         } catch (e) {
             console.log(e)
