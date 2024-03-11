@@ -14,23 +14,11 @@ export function useTelegram() {
         }
     }
     
-    const tgDataBuy = (items, queryId) => {
-        try {
-            fetch('https://5b11-94-25-225-177.ngrok-free.app/web_app/my_store', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({items, queryId})
-            })
-        } catch (e) {
-            console.log(e)
-        }
-    }
+    
     return {
         onClose,
         onToggleButton,
-        tgDataBuy,
+        // tgDataBuy,
         tg,
         user: tg.initDataUnsafe?.user,
         queryId: tg.initDataUnsafe?.query_id,

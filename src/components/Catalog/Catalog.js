@@ -79,10 +79,23 @@ const categories = [
 
 export const Catalog = () => {
     const [showCategories, setShowCategories] = useState(false)
-    const { tg, queryId, tgDataBuy } = useTelegram();
+    const { tg, queryId } = useTelegram();
     const { store, storeSize, sumPrice } = useStore((state) => state)
     const search = (val) => {
         console.log(val)
+    }
+    const tgDataBuy = (items, queryId) => {
+        try {
+            fetch('https://5b11-94-25-225-177.ngrok-free.app/web_app/my_store', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({items, queryId})
+            })
+        } catch (e) {
+            console.log(e)
+        }
     }
     // useEffect(() => {
     //     console.log(showCategories)
@@ -114,7 +127,7 @@ export const Catalog = () => {
             tg.offEvent('mainButtonClicked', tgDataBuy(store, queryId))
 
         }
-    }, [])
+    }, [tgDataBuy])
 
 
     return (
