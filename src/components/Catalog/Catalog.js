@@ -79,7 +79,7 @@ const categories = [
 
 export const Catalog = () => {
     const [showCategories, setShowCategories] = useState(false)
-    const { tg, queryId } = useTelegram();
+    const { tg, queryId, tgDataBuy } = useTelegram();
     const { store, storeSize, sumPrice } = useStore((state) => state)
     const search = (val) => {
         console.log(val)
@@ -100,6 +100,7 @@ export const Catalog = () => {
         tg.BackButton.show()
         tg.SettingsButton.show()
 
+
     } else {
         // console.log('HIDE')
         tg.MainButton.hide();
@@ -107,6 +108,7 @@ export const Catalog = () => {
         //Возможность менять валюту через админку
 
     }
+    tg.onEvent('mainButtonClicked', tgDataBuy(store, queryId))
 
     
     return (
