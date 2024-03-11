@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import s from './Catalog.module.scss'
 import { ProductItemm } from './ProductItem/ProductItem'
 import { useStore } from '../../hooks/useStore'
@@ -84,7 +84,8 @@ export const Catalog = () => {
     const search = (val) => {
         console.log(val)
     }
-    const tgDataBuy = (
+    // const 
+    const tgDataBuy = useCallback((
         // items, queryId
         ) => {
         try {
@@ -98,7 +99,7 @@ export const Catalog = () => {
         } catch (e) {
             console.log(e)
         }
-    }
+    }, [store])
     // useEffect(() => {
     //     console.log(showCategories)
     // }, [showCategories])
