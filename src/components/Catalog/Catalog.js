@@ -84,14 +84,16 @@ export const Catalog = () => {
     const search = (val) => {
         console.log(val)
     }
-    const tgDataBuy = (items, queryId) => {
+    const tgDataBuy = (
+        // items, queryId
+        ) => {
         try {
             fetch('https://5b11-94-25-225-177.ngrok-free.app/web_app/my_store', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({items, queryId})
+                body: JSON.stringify({store, queryId})
             })
         } catch (e) {
             console.log(e)
@@ -122,9 +124,9 @@ export const Catalog = () => {
 
     }
     useEffect(() => {
-        tg.onEvent('mainButtonClicked', tgDataBuy(store, queryId))
+        tg.onEvent('mainButtonClicked', tgDataBuy)
         return () => {
-            tg.offEvent('mainButtonClicked', tgDataBuy(store, queryId))
+            tg.offEvent('mainButtonClicked', tgDataBuy)
 
         }
     }, [tgDataBuy])
